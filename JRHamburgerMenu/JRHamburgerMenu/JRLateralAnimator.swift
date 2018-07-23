@@ -50,7 +50,6 @@ class JRLateralAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else {
             return
         }
-        fromVC.view.transform
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             fromVC.view.frame.origin.x = -fromVC.view.frame.width

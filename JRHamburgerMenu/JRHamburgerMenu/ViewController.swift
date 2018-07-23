@@ -24,12 +24,21 @@ class ViewController: UIViewController {
             fatalError()
         }
         vc.transitioningDelegate = self
+        vc.modalPresentationStyle = .custom
         self.present(vc, animated: true)
     }
+    let animation = JRLateralAnimator(isInAnimation: true)
 }
 
 extension ViewController: UIViewControllerTransitioningDelegate {
+    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return JRLateralAnimator()
+        animation.isInAnimation = true
+        return animation
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        animation.isInAnimation = false
+        return animation
     }
 }

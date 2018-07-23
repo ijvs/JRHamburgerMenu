@@ -23,7 +23,13 @@ class ViewController: UIViewController {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") else {
             fatalError()
         }
+        vc.transitioningDelegate = self
         self.present(vc, animated: true)
     }
 }
 
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return JRLateralAnimator()
+    }
+}

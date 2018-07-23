@@ -14,4 +14,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func didClickButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 }

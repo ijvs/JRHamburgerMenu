@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hu-j6-lHV">
+                                <rect key="frame" x="158.5" y="318.5" width="59" height="30"/>
+                                <state key="normal" title="Click me"/>
+                                <connections>
+                                    <action selector="didClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jE1-9w-8zf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9hu-j6-lHV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CrD-Xp-yYV"/>
+                            <constraint firstItem="9hu-j6-lHV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="giE-SC-3od"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -31,7 +44,23 @@
                     <view key="view" contentMode="scaleToFill" id="v6d-3J-seK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKE-tE-pbc">
+                                <rect key="frame" x="158" y="318.5" width="59" height="30"/>
+                                <state key="normal" title="Click me">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dlm-xj-MRm"/>
+                                    <action selector="didClickButton:" destination="O0r-5l-HEG" eventType="touchUpInside" id="VcB-dq-ETl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XKE-tE-pbc" firstAttribute="centerY" secondItem="v6d-3J-seK" secondAttribute="centerY" id="5sl-fC-kni"/>
+                            <constraint firstItem="XKE-tE-pbc" firstAttribute="centerX" secondItem="v6d-3J-seK" secondAttribute="centerX" id="Cdk-LB-5Yc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="McO-BP-jDp"/>
                     </view>
                 </viewController>

@@ -15,11 +15,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didClickButton(_ sender: UIButton) {
+        presentMenu()
     }
-
-
+    
+    func presentMenu() {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") else {
+            fatalError()
+        }
+        self.present(vc, animated: true)
+    }
 }
 

@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var presentationManager: JRBurgerPresentationManager!
+    var secondViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setup()
+    }
+    
+    func setup() {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") else {
+            return
+        }
+        secondViewController = vc
+        presentationManager = JRBurgerPresentationManager(sourceViewController: self, presentingController: vc)
     }
 
     @IBAction func didClickButton(_ sender: UIButton) {
@@ -20,25 +31,9 @@ class ViewController: UIViewController {
     }
     
     func presentMenu() {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") else {
-            fatalError()
+        guard let secondViewController = secondViewController else {
+            return
         }
-        vc.transitioningDelegate = self
-        vc.modalPresentationStyle = .custom
-        self.present(vc, animated: true)
-    }
-    let animation = JRLateralAnimator(isInAnimation: true)
-}
-
-extension ViewController: UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animation.isInAnimation = true
-        return animation
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animation.isInAnimation = false
-        return animation
+        self.present(secondViewController, animated: true)
     }
 }
